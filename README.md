@@ -174,19 +174,3 @@ By Sabelo Gumede – for local, private, and powerful AI.
 
 Keep building! 🚀
 ```
-
----
-
-## ✅ Why This README Works
-
-| Feature | Benefit |
-|-------|--------|
-| 📚 Clear sections | Easy to scan |
-| 💻 Copy-paste commands | No guesswork |
-| 🧱 Architecture diagram | Helps understand flow |
-| ⚠️ Prerequisites | Prevents setup errors |
-| 💡 Tips & notes | Improves UX |
-| 🌱 Future ideas | Shows vision |
-| 🔐 Privacy focus | Builds trust |
-
----
