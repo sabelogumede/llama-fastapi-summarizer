@@ -1,24 +1,29 @@
-### ✅ `README.md`
 
-```markdown
 # 📝 LLaMA FastAPI Text Summarizer
 
-A local AI-powered text summarizer that runs 100% on your machine.  
+A local AI-powered text summarizer that runs 100% on your machine.
 No internet required. No data leaves your computer.
 
-Built with:
-- 🔤 **FastAPI** – Backend API
-- 🎨 **Streamlit** – Frontend UI
-- 🧠 **Ollama + LLaMA3** – Local large language model (LLM)
-- 🔐 Private & secure – ideal for sensitive or confidential content
+---
+## 🖼️ Home Screenshot
+
+> 💡![Aprication Screen](images/app-home-screen.png)
+
+-----
+
+### **Built With:**
+- **FastAPI**: Backend API
+- **Streamlit**: Frontend UI
+- **Ollama + LLaMA3**: Local large language model (LLM)
+- **Private & Secure**: Ideal for sensitive or confidential content
 
 Perfect for summarizing articles, emails, reports, and more — all offline.
 
 ---
 
-## 🚀 Quick Start (How to Run)
+### **🚀 Quick Start (How to Run)**
 
-### 1. Prerequisites
+#### **1. Prerequisites**
 
 Before running, install:
 - [Python 3.9+](https://www.python.org/downloads/)
@@ -27,11 +32,11 @@ Before running, install:
 
 > 💡 This app works on **Windows, macOS, and Linux**.
 
-### 2. Setup the Project
+#### **2. Setup the Project**
 
 ```bash
 # Clone the project (or download as ZIP)
-git clone https://github.com/your-username/LLaMA-FastAPI-Summarizer.git
+git clone [https://github.com/sabelogumede/LLaMA-FastAPI-Summarizer.git](https://github.com/sabelogumede/LLaMA-FastAPI-Summarizer.git)
 cd LLaMA-FastAPI-Summarizer
 
 # Create a virtual environment
@@ -45,11 +50,12 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-```
+````
 
-### 3. Download the LLM Model
+#### **3. Download the LLM Model**
 
 Run this in your terminal:
+
 ```bash
 # Start Ollama in the background (opens a new window)
 ollama serve
@@ -58,76 +64,81 @@ ollama serve
 ollama pull llama3
 ```
 
-> ✅ This downloads the LLaMA3 model (~4.7GB). Only needs to be done once.
+> ✅ This downloads the LLaMA3 model (\~4.7GB). This step only needs to be done once.
 
-### 4. Run the App
+#### **4. Run the App**
 
 Open **two terminal windows**:
 
-#### Terminal 1: Start the FastAPI Backend
+##### **Terminal 1: Start the FastAPI Backend**
+
 ```bash
 uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-#### Terminal 2: Start the Streamlit Frontend
+##### **Terminal 2: Start the Streamlit Frontend**
+
 ```bash
 streamlit run frontend/app.py
 ```
 
-✅ Open the app at: [http://localhost:8501](http://localhost:8501)
+✅ Open the app at: [http://localhost:8501](https://www.google.com/search?q=http://localhost:8501)
 
----
+-----
 
-## 🧱 Architecture Overview
+### **🧱 Architecture Overview**
 
-```
-[User] 
-   ↓
-[Streamlit Web UI] → sends text → [FastAPI Backend]
-                                      ↓
-                              [Ollama + LLaMA3 (Local LLM)]
-                                      ↓
-                               Returns summary → Back to UI
-```
+The application's architecture is a simple, effective pipeline:
 
-- **Frontend**: `frontend/app.py` – Streamlit interface
-- **Backend**: `backend/main.py` – FastAPI server
-- **Model**: Runs locally via Ollama (`llama3`)
-- **Communication**: JSON over HTTP (localhost only)
+> ![Architecture Diagram](images/app-architecture.png)
 
-All processing happens on your machine — **no data is sent online**.
+- **User**: Interacts with the Streamlit UI
 
----
+  - **Frontend**: `frontend/app.py` – Streamlit interface
+  - **Backend**: `backend/main.py` – FastAPI server
+  - **Model**: Runs locally via Ollama (`llama3`)
+  - **Communication**: JSON over HTTP (localhost only)
 
-## 🛠️ Features
+🔐 **No data ever leaves your machine, ensuring complete privacy.**
 
-- ✅ Live word & character count on input
-- ✅ Clear input after summarization
-- ✅ Input validation (blocks short inputs)
-- ✅ Error handling (network, timeout, empty responses)
-- ✅ Responsive and user-friendly UI
+-----
 
----
+## API EndPonits
 
-## ⚙️ Requirements
+  * **Get**: **/health** A simple health check to verify the application is running.
+  * **Post**: **/summarize** summarize the given text input.
 
-See `requirements.txt`. Key packages:
-- `fastapi` + `uvicorn` – API backend
-- `streamlit` – frontend
-- `requests` – for calling Ollama
-- `pydantic` – data validation
-- `streamlit-copy-button` – copy functionality (installed from GitHub)
+-----
 
-> 💡 The `streamlit-copy-button` package is not on PyPI. It's installed directly from GitHub:
+### **🛠️ Features**
+
+  - ✅ Live word & character count on input
+  - ✅ Clear input after summarization
+  - ✅ Input validation (blocks short inputs)
+  - ✅ Error handling (network, timeout, empty responses)
+  - ✅ Responsive and user-friendly UI
+
+-----
+
+### **⚙️ Requirements**
+
+See `requirements.txt`. Key packages include:
+
+  - `fastapi` + `uvicorn`: API backend
+  - `streamlit`: Frontend
+  - `requests`: For calling Ollama
+  - `pydantic`: Data validation
+  - `streamlit-copy-button`: For copy functionality (installed from GitHub)
+
+> 💡 The `streamlit-copy-button` package is not on PyPI. It's installed directly from GitHub with the following command:
+>
 > ```bash
-> pip install git+https://github.com/jandot/streamlit-copy-button.git
+> pip install git+[https://github.com/jandot/streamlit-copy-button.git](https://github.com/jandot/streamlit-copy-button.git)
 > ```
 
-Add it to your environment if missing.
+-----
 
----
-
-## 📂 Project Structure
+### **📂 Project Structure**
 
 ```
 LLaMA-FastAPI-Summarizer/
@@ -145,32 +156,32 @@ LLaMA-FastAPI-Summarizer/
 └── venv/                    # (Ignored) Python virtual environment
 ```
 
----
+-----
 
-## 📌 Tips
+### **📌 Tips**
 
-- 🐢 **Summarization takes 10–60 seconds** — be patient!
-- 📏 Short inputs (<5 words) are rejected to prevent AI from "explaining" instead of summarizing.
-- 🔄 Use the **"🗑️ Clear Input"** button to start over.
-- 📋 Click **"📋 Copy summary"** to copy results to clipboard.
+  - 🐢 **Summarization takes 10–60 seconds** — please be patient\!
+  - 📏 Short inputs (\<5 words) are rejected to prevent the AI from "explaining" instead of summarizing.
+  - 🔄 Use the **"🗑️ Clear Input"** button to start over.
+  - 📋 Click **"📋 Copy summary"** to copy results to your clipboard.
 
----
+-----
 
-## 📦 Future Ideas (Optional)
+### **📦 Future Ideas**
 
-- 
-- On Click **"📋 Copy summary"** to copy results to clipboard.
-- Export summary as `.txt`
-- Support PDF/TXT file uploads
-- Add model selector (e.g., `llama3`, `mistral`)
-- Add summary length options (short/medium/long)
-- Dockerize for easy deployment
+  - Export summary as `.txt`
+  - Support PDF/TXT file uploads
+  - Add a model selector (e.g., `llama3`, `mistral`)
+  - Add summary length options (short/medium/long)
+  - Dockerize for easy deployment
 
----
+-----
 
-## 🙌 Made with ❤️
+### **🙌 Made with ❤️**
 
 By Sabelo Gumede – for local, private, and powerful AI.
 
-Keep building! 🚀
+Keep building\! 🚀
+
+```
 ```
